@@ -2,7 +2,22 @@
 
 **A transparent cradle-to-gate scenario model for the Vestas V236-15 MW offshore wind turbine.**
 
+[![Quality checks](https://github.com/Vedant-Au/offshore-wind-carbon-footprint-model/actions/workflows/quality.yml/badge.svg)](https://github.com/Vedant-Au/offshore-wind-carbon-footprint-model/actions/workflows/quality.yml)
+
+**Portfolio:** [Digital inclusion](https://github.com/Vedant-Au/ons-census-2031-digital-inclusion-risk) · [Accessibility business case](https://github.com/Vedant-Au/accessible-employee-services-business-case) · [Enterprise risk](https://github.com/Vedant-Au/enterprise-risk-management-framework) · [Workflow automation](https://github.com/Vedant-Au/vfx-workflow-automation-decision-model)
+
 > Portfolio context: this repository develops an MSc group case study into a reproducible analytics project. It is not affiliated with or endorsed by Vestas or Siemens Gamesa, and it does not reproduce the submitted report.
+
+## Recruiter quick scan
+
+| Lens | Evidence |
+| --- | --- |
+| Decision | Where to focus first to reduce embodied carbon before operation |
+| Analysis | Boundary definition, unit-aware calculations and scenario testing |
+| Recommendation | Prioritise lower-carbon materials and manufacturing, then logistics |
+| Assurance | Explicit limitations, reconciliation checks and reproducible outputs |
+
+**Contribution and provenance:** the source was an MSc group case. This repository is an individual portfolio reconstruction of the analytical model and decision narrative. It uses case-study reference inputs and does not claim product-level LCA assurance.
 
 ## Decision question
 
@@ -54,11 +69,10 @@ outputs/figures/      Recreated decision visuals
 outputs/tables/       Scenario and stage-share outputs
 tests/                Model and data-quality tests
 analysis.py           Reproducible analysis entry point
-GITHUB_SETUP.md       Repository upload instructions
 ```
 
 ## Responsible interpretation
 
 The impact table is expressed per kWh, while the scenario model estimates turbine-level tonnes using a reported lifecycle factor and an assumed cradle-to-gate share. These are separate analytical views and are not added together. Competitor figures from the academic report are excluded because system boundaries must be aligned before a fair comparison.
 
-See [methodology](docs/METHODOLOGY.md), [validation status](docs/VALIDATION.md), [asset notice](ASSET_NOTICE.md), and [GitHub setup](GITHUB_SETUP.md).
+See [methodology](docs/METHODOLOGY.md), [validation status](docs/VALIDATION.md), and [asset notice](ASSET_NOTICE.md).
