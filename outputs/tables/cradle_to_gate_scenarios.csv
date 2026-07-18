@@ -1,0 +1,4 @@
+scenario,cradle_to_gate_share,estimated_t_co2e
+Low,0.7,5544.0
+Base,0.75,5940.0
+High,0.8,6336.0

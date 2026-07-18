@@ -1,0 +1,11 @@
+impact_category,unit,manufacturing,plant_setup,total
+Abiotic resource depletion - elements,mg Sb-e/kWh,1.27,0,1.27
+Abiotic resource depletion - fossils,MJ/kWh,0.09,0.01,0.10
+Acidification potential,mg SO2-e/kWh,21,3,24
+Eutrophication potential,mg PO4-e/kWh,1.9,0.5,2.4
+Freshwater ecotoxicity,mg DCB-e/kWh,31,1.6,32.6
+Global warming potential,g CO2-e/kWh,7.1,0.4,7.5
+Human toxicity,mg DCB-e/kWh,1313,11,1324
+Marine ecotoxicity,g DCB-e/kWh,796,5,801
+Photochemical smog,mg ethene/kWh,2.9,0.3,3.2
+Terrestrial ecotoxicity,mg DCB-e/kWh,28,0.3,28.3

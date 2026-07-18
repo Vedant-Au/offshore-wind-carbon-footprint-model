@@ -1,0 +1,6 @@
+parameter,value,unit,source_note
+capacity,15,MW,V236 rated capacity used in the group case
+lifecycle_emissions_factor,528,t CO2e/MW,Report planning factor
+low_cradle_to_gate_share,0.70,proportion,Lower scenario assumption
+base_cradle_to_gate_share,0.75,proportion,Midpoint scenario assumption
+high_cradle_to_gate_share,0.80,proportion,Upper scenario assumption
