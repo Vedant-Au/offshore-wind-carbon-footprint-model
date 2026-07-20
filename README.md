@@ -4,8 +4,8 @@
 
 [![Quality checks](https://github.com/Vedant-Au/offshore-wind-carbon-footprint-model/actions/workflows/quality.yml/badge.svg)](https://github.com/Vedant-Au/offshore-wind-carbon-footprint-model/actions/workflows/quality.yml)
 
-> ### 94.7%
-> Manufacturing contributes 7.1 of the 7.5 g CO2e/kWh cradle-to-gate profile preserved in the case evidence.
+> **94.7%** — Manufacturing contributes 7.1 of the 7.5 g CO2e/kWh
+> cradle-to-gate profile preserved in the case evidence.
 
 That result makes the first management question clear: focus supplier and engineering effort on materials and manufacturing before optimising the smaller setup contribution.
 
@@ -32,11 +32,11 @@ This is a **cradle-to-gate** view. Operations, maintenance and end-of-life sit o
 
 ## Two calculations—kept deliberately separate
 
-**Impact-category view**
+### Impact-category view
 
 `manufacturing share = manufacturing / (manufacturing + plant setup)`
 
-**Turbine planning view**
+### Turbine planning view
 
 `cradle-to-gate t CO2e = 528 t CO2e/MW × 15 MW × allocation share`
 
