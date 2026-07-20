@@ -1,63 +1,66 @@
-# Offshore Wind Carbon Footprint Model
+# Where Is the Carbon Before an Offshore Turbine Operates?
 
-**A boundary-conscious cradle-to-gate scenario model for the Vestas V236-15 MW offshore turbine.**
+## A cradle-to-gate boundary and scenario study for the Vestas V236-15 MW
 
 [![Quality checks](https://github.com/Vedant-Au/offshore-wind-carbon-footprint-model/actions/workflows/quality.yml/badge.svg)](https://github.com/Vedant-Au/offshore-wind-carbon-footprint-model/actions/workflows/quality.yml)
 
-**Role:** Team Lead, sustainability and emissions assessment  
-**Decision:** where should a manufacturer intervene first to reduce embodied carbon before operation?
+> ### 94.7%
+> Manufacturing contributes 7.1 of the 7.5 g CO2e/kWh cradle-to-gate profile preserved in the case evidence.
 
-## Finding
+That result makes the first management question clear: focus supplier and engineering effort on materials and manufacturing before optimising the smaller setup contribution.
 
-Manufacturing is the dominant intervention point in the case evidence:
+![Manufacturing share](outputs/figures/manufacturing_share.png)
 
-- It accounts for **7.1 of 7.5 g CO2e/kWh**, or **94.7%**, of the published cradle-to-gate global-warming profile used by the case.
-- Applying the report's 70%-80% cradle-to-gate allocation to its lifecycle estimate produces a planning range of **5,544-6,336 t CO2e per turbine**.
-- The first priorities are therefore lower-carbon material sourcing and manufacturing improvement, followed by lower-emission logistics and recurring LCA refreshes.
+## Boundary before number
 
-![Stage contribution](outputs/figures/manufacturing_share.png)
+```mermaid
+flowchart LR
+    A["Raw materials"] --> B["Processing"]
+    B --> C["Manufacturing"]
+    C --> D["Transport"]
+    D --> E["Offshore setup"]
+```
+
+This is a **cradle-to-gate** view. Operations, maintenance and end-of-life sit outside the scenario. That distinction matters because carbon figures with different system boundaries cannot be ranked as though they measure the same thing.
+
+| Included in the model | Not claimed by the model |
+| --- | --- |
+| Published stage-intensity reference table | Verified product carbon footprint |
+| Manufacturing/setup contribution by impact category | Supplier-specific bill of materials |
+| 70%, 75% and 80% allocation scenarios | Whole-life competitor comparison |
+| Unit and reconciliation checks | Abatement cost or engineering feasibility |
+
+## Two calculations—kept deliberately separate
+
+**Impact-category view**
+
+`manufacturing share = manufacturing / (manufacturing + plant setup)`
+
+**Turbine planning view**
+
+`cradle-to-gate t CO2e = 528 t CO2e/MW × 15 MW × allocation share`
+
+The second view produces **5,544-6,336 t CO2e per turbine** across the 70%-80% range. It is a planning scenario, not an extra quantity to add to the per-kWh profile.
 
 ![Cradle-to-gate scenarios](outputs/figures/cradle_to_gate_scenarios.png)
 
-## What I led
+## Decision implications
 
-I led the underlying MSc assessment: defining the cradle-to-gate boundary, applying ISO 14040/14044 logic, converting reported intensity factors to turbine-level scenarios and challenging competitor comparisons where system boundaries were not aligned.
+1. Engage steel, composite and component suppliers on verified embodied-carbon data.
+2. Test lower-carbon material and manufacturing alternatives against cost and technical constraints.
+3. Address logistics after the dominant manufacturing hotspots are understood.
+4. Refresh the model when supplier and bill-of-material evidence replaces reference assumptions.
 
-The repository turns that work into a reproducible Python implementation that:
+I led the underlying MSc assessment: defining the boundary, applying ISO 14040/14044 logic, converting intensity factors into turbine scenarios and rejecting invalid competitor comparisons.
 
-1. validates the reference impact table;
-2. calculates manufacturing and plant-setup shares by impact category;
-3. converts lifecycle t CO2e/MW into turbine-level emissions;
-4. tests 70%, 75% and 80% cradle-to-gate allocation scenarios; and
-5. produces traceable tables and figures.
+## Calculation audit
 
-## Analytical judgement
-
-The per-kWh impact profile and the turbine-level scenario are **separate views**. They are not added together. Competitor figures are also excluded from the implementation because comparing lifecycle results with different boundaries would create false precision.
-
-That boundary discipline is the main analytical choice in this model: a narrower, defensible comparison is more useful than a broader but invalid benchmark.
-
-See the [methodology](docs/METHODOLOGY.md) and [validation notes](docs/VALIDATION.md) for formulas and reconciliation checks.
-
-## Reproduce the model
+The full formula trail is in [boundary and calculations](docs/BOUNDARY_CALCULATIONS.md); reconciliations and interpretation checks are in [model checks](docs/MODEL_CHECKS.md).
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
 pip install -r requirements.txt
 python analysis.py
 python -m unittest discover -s tests -v
 ```
 
-```text
-data/reference/       Case-study reference inputs
-docs/                 Methodology and validation notes
-outputs/figures/      Decision visuals
-outputs/tables/       Scenario and stage-share outputs
-tests/                Model and data-quality tests
-analysis.py           Reproducible analysis entry point
-```
-
-## Evidence boundary
-
-The range is a scenario estimate, not a product declaration. It should be replaced with verified bill-of-material, supplier and logistics data before operational use. This work is not affiliated with or endorsed by Vestas or Siemens Gamesa; see [ASSET_NOTICE.md](ASSET_NOTICE.md).
+> **Use with care:** reference inputs come from an academic case, not a verified inventory. The work is not affiliated with or endorsed by Vestas or Siemens Gamesa. See [ASSET_NOTICE.md](ASSET_NOTICE.md).
