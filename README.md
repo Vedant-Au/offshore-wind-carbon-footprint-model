@@ -4,12 +4,26 @@
 
 [![Quality checks](https://github.com/Vedant-Au/offshore-wind-carbon-footprint-model/actions/workflows/quality.yml/badge.svg)](https://github.com/Vedant-Au/offshore-wind-carbon-footprint-model/actions/workflows/quality.yml)
 
-> **94.7%** — Manufacturing contributes 7.1 of the 7.5 g CO2e/kWh
-> cradle-to-gate profile preserved in the case evidence.
+**Team of 6** · Managing Business Operations, MSc Business Analysis and Consulting (University of Strathclyde) · Jan–Feb 2026 · ISO 14040/14044, GWP100
 
-That result makes the first management question clear: focus supplier and engineering effort on materials and manufacturing before optimising the smaller setup contribution.
+> **The emissions sit in manufacturing, and mostly in steel.** Foundations contribute **25%** of cradle-to-gate global warming potential and the tower **13%**. Steel is roughly **82.9%** of total turbine mass, so the footprint is largely a steel procurement question rather than a turbine design question.
 
-![Manufacturing share](outputs/figures/manufacturing_share.png)
+| Component | Share of cradle-to-gate GWP |
+| --- | ---: |
+| Foundations | 25% |
+| Tower | 13% |
+| Blades | 9% |
+| Site cables | 9% |
+| Nacelle | 7% |
+| Gear and main shaft | 5% |
+| Set-up stage (installation vessels) | 4% |
+| Offshore substation | 3% |
+
+Carbon dioxide accounts for **92%** of the impact and methane **6%**. Sulphur hexafluoride, despite a very high global warming potential per unit, contributes about **1%** because so little is used.
+
+That makes the first management question clear: focus supplier and engineering effort on steel, materials and manufacturing before optimising the smaller set-up contribution.
+
+![One-page summary](one-pager.png)
 
 ## Boundary before number
 
@@ -36,6 +50,8 @@ This is a **cradle-to-gate** view. Operations, maintenance and end-of-life sit o
 
 `manufacturing share = manufacturing / (manufacturing + plant setup)`
 
+This ratio comes from a published stage-intensity reference table used for scenario modelling. It is a different measure from the component shares above and is not used as a headline finding.
+
 ### Turbine planning view
 
 `cradle-to-gate t CO2e = 528 t CO2e/MW × 15 MW × allocation share`
@@ -51,7 +67,7 @@ The second view produces **5,544-6,336 t CO2e per turbine** across the 70%-80% r
 3. Address logistics after the dominant manufacturing hotspots are understood.
 4. Refresh the model when supplier and bill-of-material evidence replaces reference assumptions.
 
-I led the underlying MSc assessment: defining the boundary, applying ISO 14040/14044 logic, converting intensity factors into turbine scenarios and rejecting invalid competitor comparisons.
+The underlying MSc assessment was a six-person team project. The work covered defining the boundary, applying ISO 14040/14044 logic, converting intensity factors into turbine scenarios and rejecting invalid competitor comparisons. The [one-page summary](one-pager.pdf) gives the full picture.
 
 ## Calculation audit
 
